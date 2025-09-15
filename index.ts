@@ -34,29 +34,29 @@ const codeReviewAgent = async (prompt: string) => {
         process.stdout.write(chunk);
       }
       
-      console.log("\n✅ Code review completed successfully!");
+      console.log("Code review completed successfully!");
       return; // Success, exit the function
       
     } catch (error: any) {
       lastError = error;
-      console.log(`❌ Model ${model.modelId} failed: ${error.message}`);
+      console.log(`Model ${model.modelId} failed: ${error.message}`);
       
       // If it's a 503 error (overloaded), try the next model
       if (error.statusCode === 503 || error.message?.includes('overloaded')) {
-        console.log("🔄 Model is overloaded, trying next model...");
+        console.log("Model is overloaded, trying next model...");
         continue;
       }
       
       // If it's a different error, wait a bit before trying the next model
-      console.log("⏳ Waiting 2 seconds before trying next model...");
+      console.log("Waiting 2 seconds before trying next model...");
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
   }
 
   // If all models failed
-  console.error("\n❌ All models failed. Last error:");
+  console.error("All models failed. Last error:");
   console.error(lastError?.message || "Unknown error");
-  console.log("\n💡 Suggestions:");
+  console.log("Suggestions:");
   console.log("1. Try again in a few minutes when the API load is lower");
   console.log("2. Check your Google AI API key and quota");
   console.log("3. Consider using a different AI provider");
