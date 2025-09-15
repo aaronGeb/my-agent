@@ -3,6 +3,12 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "retry": "bun run retry-agent.ts",
+    "test-tools": "bun run test-tools.ts",
+    "dev": "bun run --watch index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -11,6 +17,8 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^2.0.14",
-    "ai": "^5.0.44"
+    "ai": "^5.0.44",
+    "simple-git": "^3.28.0",
+    "zod": "^4.1.8"
   }
 }
