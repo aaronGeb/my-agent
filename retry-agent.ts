@@ -31,7 +31,7 @@ const codeReviewAgent = async (prompt: string) => {
 
   for (const model of models) {
     try {
-      console.log(`🔄 Trying model: ${model.modelId}...`);
+      console.log(`Trying model: ${model.modelId}...`);
       
       await retryWithBackoff(async () => {
         const result = streamText({
@@ -70,8 +70,8 @@ const codeReviewAgent = async (prompt: string) => {
     }
   }
 
-  console.error("\n All models failed. The Google AI API appears to be experiencing issues.");
-  console.log("\n💡 Try again in a few minutes or check the Google AI status page.");
+  console.error("All models failed. The Google AI API appears to be experiencing issues.");
+  console.log("Try again in a few minutes or check the Google AI status page.");
   process.exit(1);
 };
 
