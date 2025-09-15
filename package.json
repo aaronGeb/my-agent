@@ -1,0 +1,16 @@
+{
+  "name": "my-agent",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^2.0.14",
+    "ai": "^5.0.44"
+  }
+}
