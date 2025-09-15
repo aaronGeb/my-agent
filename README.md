@@ -60,7 +60,7 @@ bun run dev
 
 | Script | Description |
 |--------|-------------|
-| `bun run start` | Run the main agent with fallback models |
+| `bun run index.ts` | Run the main agent with fallback models |
 | `bun run retry` | Enhanced retry agent with exponential backoff |
 | `bun run test-tools` | Test tools without AI (useful when API is down) |
 | `bun run dev` | Development mode with file watching |
